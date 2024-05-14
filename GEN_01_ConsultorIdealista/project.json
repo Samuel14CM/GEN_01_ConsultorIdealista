@@ -5,6 +5,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.23.2-preview]",
+    "UiPath.IntegrationService.Activities": "[1.5.0]",
     "UiPath.System.Activities": "[24.2.0-preview]",
     "UiPath.Testing.Activities": "[24.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]"
@@ -84,6 +85,13 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "95783016-60ba-409f-b0da-ad0ae2530e44",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\AccesoChatGPT\\TestCaseAccesoChatGPT.xaml"
       }
     ],
     "saveToCloud": false
