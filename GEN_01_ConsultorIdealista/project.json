@@ -5,6 +5,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.23.2-preview]",
+    "UiPath.Mail.Activities": "[1.23.0]",
     "UiPath.System.Activities": "[24.2.0-preview]",
     "UiPath.Testing.Activities": "[24.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]"
@@ -84,6 +85,13 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7d7a0dff-25f9-40b5-877f-d855c61d9b78",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\TestCase_Modulo_LeerCorreos.xaml"
       }
     ],
     "saveToCloud": false
