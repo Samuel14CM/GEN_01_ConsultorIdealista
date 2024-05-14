@@ -43,6 +43,31 @@
     {
       "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
       "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "numero_articulo&TryCatch_1",
+        "boo_existeidealista&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config",
+        "out_resultadoBusqueda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "numero_articulo&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Subir a orquestador/Testcase Subir a Orquestador.xaml",
+      "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

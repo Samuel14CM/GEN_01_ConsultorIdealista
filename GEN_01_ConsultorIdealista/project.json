@@ -84,6 +84,20 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "12aaba3c-8726-401b-92d2-0865d25ce20e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\Busqueda de Resultados\\TestCase Busqueda de resultados.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e0fa6a42-ed4f-4b39-afeb-ac7d26bfff5e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\Subir a orquestador\\Testcase Subir a Orquestador.xaml"
       }
     ],
     "saveToCloud": false
