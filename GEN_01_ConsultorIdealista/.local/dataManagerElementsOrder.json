@@ -52,7 +52,8 @@
       "Path": "Modulos/TestCase_Leer_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Config&Sequence_2"
+        "lista_mails&Sequence_1",
+        "Config&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -63,6 +64,22 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

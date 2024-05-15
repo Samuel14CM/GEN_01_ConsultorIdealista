@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>914,2818</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>914,2443</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Leer_Correos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,13 +126,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="850,2753" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="850,2378" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="788,2352" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="788,2290" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lista_mails" />
         <Variable x:TypeArguments="x:String" Name="str_TextMailActual" />
@@ -140,7 +140,7 @@
         <Variable x:TypeArguments="ss:SecureString" Name="scr_passOutlook" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="750,2102" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="750,2017" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +178,7 @@
               </ui:OpenBrowser.Body>
             </ui:OpenBrowser>
           </Sequence>
-          <Sequence DisplayName="Accedemos a la bandeja de entrada y leemos correos" sap:VirtualizedContainerService.HintSize="688,1559" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Accedemos a la bandeja de entrada y leemos correos" sap:VirtualizedContainerService.HintSize="688,1474" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,19 +199,24 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[str_user]" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[lista_mails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="outlook.office365.com" Top="30" />
+            <Assign sap2010:Annotation.AnnotationText="Con esta variable le estooy dando valor al argumento out_listaMails" sap:VirtualizedContainerService.HintSize="626,145" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[out_listaMails]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[lista_mails]</InArgument>
               </Assign.Value>
-            </Assign>
-            <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[str_user]" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[lista_mails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="outlook.office365.com" Top="30" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Leemos correos&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Leemos correos&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -229,7 +234,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;SL-01&quot;]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;No hay correos pendientes&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
