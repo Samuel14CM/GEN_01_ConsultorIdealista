@@ -31,28 +31,6 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
-    },
-    {
-      "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "TestCase.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Config&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_listMails",
-        "in_config",
-        "out_datosCola"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
     }
   ]
 }
