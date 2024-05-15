@@ -35,7 +35,26 @@
     {
       "Path": "Modulos/Leer_Correos.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "textomail&Sequence_5",
+        "lista_mails&TryCatch_1",
+        "scr_passw_outlook&TryCatch_1",
+        "str_Texto_Mail_Actual&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_lista_mails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/TestCase_Modulo_LeerCorreos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_Texto_Mail_Actual&Sequence_2",
+        "scr_passw_outlook&Sequence_2"
+      ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
