@@ -93,6 +93,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Modulos\\TestCase_Leer_Correos.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6322d8d9-f76d-4630-b84f-c83996960bd7",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\TestCase_Envio_Correos.xaml"
       }
     ],
     "saveToCloud": false
