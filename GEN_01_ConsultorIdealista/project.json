@@ -4,6 +4,7 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.23.2-preview]",
     "UiPath.Mail.Activities": "[1.23.0]",
     "UiPath.System.Activities": "[24.2.0-preview]",
@@ -88,10 +89,10 @@
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "7d7a0dff-25f9-40b5-877f-d855c61d9b78",
+        "testCaseId": "94ba2c77-7fd4-494a-9a73-627f28b35b43",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "Modulos\\TestCase_Modulo_LeerCorreos.xaml"
+        "fileName": "Modulos\\TestCase_Leer_Correos.xaml"
       }
     ],
     "saveToCloud": false

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6mbGarqBwPpZ4csdp11I5amEUcXE8B6Nj1Q+m7IdrWZwraz+kIVDZPYtIuFQrV4dHbyUMP68jDMh4Is1XfKSWA==",
+  "dgSpecHash": "RCEkUZOtp6pazczUiQ/4bkqc+oP97qbhKE5E08fCyoAQ+I4wX8FZgI/5JXcBtUCuulKHqzOwVKlI1Nf5r0/7cA==",
   "success": true,
   "projectFilePath": "C:\\Users\\rocio\\Documents\\PDDIdealistaFinal\\GEN_01_ConsultorIdealista\\.local\\",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\rocio\\.nuget\\packages\\azure.storage.common\\12.18.1\\azure.storage.common.12.18.1.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\bouncycastle.cryptography\\2.3.0\\bouncycastle.cryptography.2.3.0.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
+    "C:\\Users\\rocio\\.nuget\\packages\\credentialmanagement.standard\\1.0.4\\credentialmanagement.standard.1.0.4.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\documentformat.openxml\\2.12.1\\documentformat.openxml.2.12.1.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
@@ -270,6 +271,7 @@
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.activities.runtimegovernance\\1.1.6\\uipath.activities.runtimegovernance.1.1.6.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.codedworkflows\\24.4.0-preview\\uipath.codedworkflows.24.4.0-preview.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.connectionclient\\2.0.3\\uipath.connectionclient.2.0.3.nupkg.sha512",
+    "C:\\Users\\rocio\\.nuget\\packages\\uipath.credentials.activities\\2.0.0\\uipath.credentials.activities.2.0.0.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.excel.activities\\2.23.2-preview\\uipath.excel.activities.2.23.2-preview.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.imageprocessing\\23.4.0\\uipath.imageprocessing.23.4.0.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\uipath.mail.activities\\1.23.0\\uipath.mail.activities.1.23.0.nupkg.sha512",
