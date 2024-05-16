@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Busqueda_de_resultados" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Busqueda_de_resultados" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_resultadoBusqueda" Type="OutArgument(x:String)" />
+    <x:Property Name="out_resultadoBusqueda" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:Object, x:String))" />
     <x:Property Name="in_datosQueue" Type="InArgument(x:String)" />
   </x:Members>
@@ -111,6 +111,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Busqueda_de_resultados" sap:VirtualizedContainerService.HintSize="849.6,4236" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -124,10 +125,11 @@
     </sap:WorkflowViewStateService.ViewState>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="787.2,4147.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
-        <Variable x:TypeArguments="x:Int32" Default="1" Name="numero_articulo" />
+        <Variable x:TypeArguments="x:Int32" Name="numero_articulo" />
         <Variable x:TypeArguments="x:String" Name="get_metros" />
         <Variable x:TypeArguments="x:String" Name="get_habitaciones" />
         <Variable x:TypeArguments="x:String" Name="get_precio" />
+        <Variable x:TypeArguments="x:String" Name="get_url" />
       </TryCatch.Variables>
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="750.4,3892.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -138,12 +140,8 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="688,145.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-                <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
-              </InArgument>
-              <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-                <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
               <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
@@ -275,18 +273,15 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="625.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Se empieza a recoger los datos&quot;]" />
             <ui:ReadRange DataTable="{x:Null}" Range="{x:Null}" SheetName="{x:Null}" WorkbookPath="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="625.6,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" />
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="El articulo sera el 12 dependiendo del número de viviendas que el cliente quiere. Se le debe sumar +12 si es 10 viviendas" DisplayName="While" sap:VirtualizedContainerService.HintSize="625.6,1869.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="El articulo sera el 12 dependiendo del número de viviendas que el cliente quiere. Se le debe sumar +12 si es 10 viviendas" Condition="[numero_articulo&gt;12]" DisplayName="While" sap:VirtualizedContainerService.HintSize="625.6,1869.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1688" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="get_url" />
-                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap2010:Annotation.AnnotationText="Si el número del articulo es = 4 o 20, al ser publicidad no recogera información, a lo que pasaria el número del articulo siguiente.&#xD;&#xA;Pasará a ser 5 y 21" Condition="[numero_articulo=4 or numero_articulo=20]" sap:VirtualizedContainerService.HintSize="529.6,524" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap2010:Annotation.AnnotationText="Si el número del articulo es = 4 o 20, al ser publicidad no recogera información, a lo que pasaria el número del articulo siguiente.&#xA;Pasará a ser 5 y 21" Condition="[numero_articulo=4 or numero_articulo=20]" sap:VirtualizedContainerService.HintSize="529.6,524" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -331,7 +326,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52184f07-8b92-4826-93e1-a30d0801ed43" InformativeScreenshot="6f2a653ff3d04a169bc47f3047c36099" Selector="&lt;html app='chrome.exe' title='Casas y pisos baratos en Cádiz — idealista' /&gt;&lt;webctrl aria-role='heading' tag='A' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52184f07-8b92-4826-93e1-a30d0801ed43" InformativeScreenshot="8e0cf02c4ab1b881154a163fb699af48" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl aria-role='heading' tag='A' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -365,7 +360,7 @@
                   </ui:Click>
                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="529.6,139.2" sap2010:WorkflowViewState.IdRef="GetValue_3">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0b8379d0-a456-4b42-91fc-a8babba17cd9" InformativeScreenshot="fe199915f2bd46ec3cc6b24f2fb8541c" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl aaname='*' parentid='main-content' tag='SPAN' innertext='*' visibleinnertext='*' /&gt;&quot;, numero_articulo)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0b8379d0-a456-4b42-91fc-a8babba17cd9" InformativeScreenshot="f2a3a5f9fceec892d91174c4882f783d" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article&amp;gt;div&amp;gt;div' parentid='main-content' tag='DIV' visibleinnertext='*' /&gt;&lt;webctrl aaname='*' parentid='main-content' tag='SPAN' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -380,7 +375,7 @@
                   </ui:GetValue>
                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="529.6,139.2" sap2010:WorkflowViewState.IdRef="GetValue_4">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13e6769f-d15a-47dd-a725-e28aace55e52" InformativeScreenshot="3b9994c8828b9564180a72939b67d9f6" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='1' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' aaname='* hab.' innertext='* hab.' visibleinnertext='* hab.' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13e6769f-d15a-47dd-a725-e28aace55e52" InformativeScreenshot="cc6a587d0bc6d531e25558310d839f60" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' visibleinnertext='*' idx='{0}' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -395,7 +390,7 @@
                   </ui:GetValue>
                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="529.6,139.2" sap2010:WorkflowViewState.IdRef="GetValue_5">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b10b64f6-b4c6-45b7-9629-0addfed90ff2" InformativeScreenshot="393b82793fa858eb76bbf71d99365d0f" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl aaname='* m²' class='item-detail' parentid='main-content' tag='SPAN' innertext='* m²' visibleinnertext='* m²' /&gt;&quot;, numero_articulo)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b10b64f6-b4c6-45b7-9629-0addfed90ff2" InformativeScreenshot="beb53d88dd35b1bc63d4d19a67662242" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl aaname='* m²' class='item-detail' parentid='main-content' tag='SPAN' innertext='* m²' visibleinnertext='* m²' idx='{0}' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -413,7 +408,7 @@
                       <OutArgument x:TypeArguments="x:String">[get_url]</OutArgument>
                     </ui:GetFromClipboard.Result>
                   </ui:GetFromClipboard>
-                  <ui:AddDataRow DataRow="{x:Null}" DataTable="{x:Null}" ArrayRow="[{get_precio, get_habitaciones, get_metros, get_url}]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.6,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{get_precio, get_habitaciones, get_metros, get_url}]" DataTable="[out_resultadoBusqueda]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.6,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   <Assign sap:VirtualizedContainerService.HintSize="529.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[numero_articulo]</OutArgument>
@@ -424,9 +419,6 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="numero_articulo&gt;12" />
-              </ui:InterruptibleWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
