@@ -31,6 +31,31 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_Prompt&Sequence_1",
+        "str_PromptMail&Sequence_1",
+        "str_bodyMail&Sequence_1",
+        "exists&Sequence_1",
+        "DataQueue&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_listMails",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/TestCase_Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
