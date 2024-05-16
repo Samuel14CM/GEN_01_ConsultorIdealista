@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>914,2554</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>914,2494</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Leer_Correos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,13 +130,13 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="912,2489" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer_Correos" sap:VirtualizedContainerService.HintSize="912,2429" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="850,2318" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="850,2341" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="lista_mails" />
         <Variable x:TypeArguments="x:String" Name="str_TextMailActual" />
@@ -210,19 +210,6 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
               <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[str_user]" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[lista_mails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="outlook.office365.com" Top="30" />
-              <Assign sap2010:Annotation.AnnotationText="Con esta variable le estooy dando valor al argumento out_listaMails" sap:VirtualizedContainerService.HintSize="626,145" sap2010:WorkflowViewState.IdRef="Assign_4">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[out_listaMails]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[lista_mails]</InArgument>
-                </Assign.Value>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Assign>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Leemos correos&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -231,7 +218,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <If sap2010:Annotation.AnnotationText="Si la bandeja de entrada se encuentra vacía, entonces nos muestra la sallida 01, si no, leemos los correos" Condition="[in_Config(&quot;lista_mails&quot;).ToString.Count=0]" sap:VirtualizedContainerService.HintSize="626,844" sap2010:WorkflowViewState.IdRef="If_3">
+              <If sap2010:Annotation.AnnotationText="Si la bandeja de entrada se encuentra vacía, entonces nos muestra la sallida 01, si no, leemos los correos" Condition="[in_Config(&quot;lista_mails&quot;).ToString.Count=0]" sap:VirtualizedContainerService.HintSize="626,989" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -255,19 +242,19 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,519" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,664" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each: Recorremos la bandeja de entrada leyendo uno por uno los correos" sap:VirtualizedContainerService.HintSize="530,434" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_Config(&quot;lista_mails&quot;).ToString]">
+                    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each: Recorremos la bandeja de entrada leyendo uno por uno los correos" sap:VirtualizedContainerService.HintSize="530,579" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_Config(&quot;lista_mails&quot;).ToString]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="snm:MailMessage">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Con este código lo que conseguimos es leer el cuerpo de cada correo" sap:VirtualizedContainerService.HintSize="496,247" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence DisplayName="Con este código lo que conseguimos es leer el cuerpo de cada correo" sap:VirtualizedContainerService.HintSize="496,392" sap2010:WorkflowViewState.IdRef="Sequence_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -280,6 +267,19 @@
                               <Assign.Value>
                                 <InArgument x:TypeArguments="x:String">[currentMailMessage.Body]</InArgument>
                               </Assign.Value>
+                            </Assign>
+                            <Assign sap2010:Annotation.AnnotationText="Con esta variable le estooy dando valor al argumento out_listaMails" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[out_listaMails]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[lista_mails]</InArgument>
+                              </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </Assign>
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Ahora vamos a obtener los datos del cuerpo del correo para pasar los parámetros que nos interesa a Chat GPT&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
