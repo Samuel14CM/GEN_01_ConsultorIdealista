@@ -44,7 +44,7 @@
       "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "get_url&Sequence_4",
+        "get_url&TryCatch_1",
         "get_precio&TryCatch_1",
         "get_habitaciones&TryCatch_1",
         "get_metros&TryCatch_1",
