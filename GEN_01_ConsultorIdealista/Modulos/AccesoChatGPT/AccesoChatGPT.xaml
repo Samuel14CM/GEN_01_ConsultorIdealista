@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AccesoChatGPT" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="698,3048" sap2010:WorkflowViewState.IdRef="AccesoChatGPT_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AccesoChatGPT" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>698,3048</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AccesoChatGPT_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -117,7 +125,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p:GetSecureCredential sap2010:Annotation.AnnotationText="Se crean las Credenciales en Windows después de instalar la extensión de credentials con usuario y contraseña." CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="546,169" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[scr_PasswordAccesoGPT]" PersistanceType="Enterprise" Target="ProyectoRPA" Username="[str_usuario]">
+          <p:GetSecureCredential sap2010:Annotation.AnnotationText="Se crean las Credenciales en Windows después de instalar la extensión de credentials con usuario y contraseña." CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="546,169" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[scr_PasswordAccesoGPT]" PersistanceType="Enterprise" Target="[In_Config(&quot;Credenciales_ChatGPT&quot;).ToString]" Username="[str_usuario]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -125,7 +133,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </p:GetSecureCredential>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Empieza a buscar la página de ChatGPT&quot;]" />
-          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Buscamos la URL de ChatGPT" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="546,2217" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://chatgpt.com/auth/login">
+          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Buscamos la URL de ChatGPT" BrowserType="Chrome" DisplayName="Open Browser" Hidden="True" sap:VirtualizedContainerService.HintSize="546,2217" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="True" Url="[In_Config(&quot;DireccionURL&quot;).ToString]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -178,7 +186,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34c8a100-fa5f-4541-be9d-ae144cb3e34c" InformativeScreenshot="c2eb65ea9ddbe3b8f96425d353f55134" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='BUTTON' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34c8a100-fa5f-4541-be9d-ae144cb3e34c" InformativeScreenshot="c2eb65ea9ddbe3b8f96425d353f55134" Selector="&lt;webctrl tag='BUTTON' idx='1' /&gt;&lt;webctrl /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -224,7 +232,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c476e8d6-34c1-45cc-b150-f14566ae916a" InformativeScreenshot="2d0a0f92f25b68f4f259364020c438f4" Selector="&lt;html app='chrome.exe' title='Login - ChatGPT' /&gt;&lt;webctrl tag='BUTTON' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c476e8d6-34c1-45cc-b150-f14566ae916a" InformativeScreenshot="2d0a0f92f25b68f4f259364020c438f4" Selector="&lt;webctrl tag='BUTTON' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
