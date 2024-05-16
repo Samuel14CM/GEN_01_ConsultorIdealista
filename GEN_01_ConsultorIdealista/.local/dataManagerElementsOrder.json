@@ -62,8 +62,15 @@
     {
       "Path": "Modulos/Envio_Correos.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "str_user&Sequence_1",
+        "scr_passOutlook&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_resultadosBusqueda",
+        "in_elementoCola",
+        "in_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -80,6 +87,16 @@
         "in_ConfigSheets",
         "out_Config"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/TestCase_Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
