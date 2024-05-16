@@ -36,7 +36,6 @@
       "Path": "Modulos/Leer_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Config&Sequence_15",
         "scr_passOutlook&TryCatch_1",
         "str_user&TryCatch_1",
         "str_TextMailActual&TryCatch_1",
