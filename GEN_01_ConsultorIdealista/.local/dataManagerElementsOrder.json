@@ -79,6 +79,48 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "scr_passOutlook&Sequence_1",
+        "str_user&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_elementoCola",
+        "in_resultadosBusqueda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/TestCase_Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "lista_mails&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lista_mails&TryCatch_1",
+        "str_TextMailActual&TryCatch_1",
+        "str_user&TryCatch_1",
+        "scr_passOutlook&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_listaMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
