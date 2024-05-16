@@ -121,6 +121,22 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/TestCase_Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "R_Busqueda&Sequence_1",
+        "Elemento_Cola&Sequence_1",
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_resultadoBusqueda",
+        "in_elementoCola"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
