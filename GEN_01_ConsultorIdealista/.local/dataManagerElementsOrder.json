@@ -36,13 +36,16 @@
       "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "str_Prompt&Sequence_1",
-        "str_PromptMail&Sequence_1",
-        "str_bodyMail&Sequence_1",
+        "parametros_exist&Sequence_1",
+        "business_NoRespuesta&Sequence_1",
+        "DataQueue&Sequence_1",
         "exists&Sequence_1",
-        "DataQueue&Sequence_1"
+        "str_bodyMail&Sequence_1",
+        "str_PromptMail&Sequence_1",
+        "str_Prompt&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_elementosQueue",
         "In_listMails",
         "in_config"
       ],
@@ -52,8 +55,26 @@
     {
       "Path": "Modulos/Obtener_Datos_Correos/TestCase_Obtener_Datos_Correos.xaml",
       "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DataQueue&Sequence_1",
+        "list_Mail&Sequence_1",
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_config",
+        "In_listMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
       "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

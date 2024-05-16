@@ -1,12 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Obtener_Datos_Correos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="In_listMails" Type="InArgument(scg:List(snm:MailMessage))" />
-    <x:Property Name="in_config" Type="InArgument(x:String)" />
+    <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_elementosQueue" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1874,2078</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1874,3821</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Obtener_Datos_Correos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -49,6 +50,10 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,9 +115,11 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="726,2013" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="804,3756" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DataQueue" />
       <Variable x:TypeArguments="x:Boolean" Name="exists">
@@ -126,94 +133,235 @@
       <Variable x:TypeArguments="x:String" Name="str_bodyMail" />
       <Variable x:TypeArguments="x:String" Name="str_PromptMail" />
       <Variable x:TypeArguments="x:String" Name="str_Prompt" />
+      <Variable x:TypeArguments="ui:BusinessRuleException" Name="business_NoRespuesta">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="ui:BusinessRuleException" ExpressionText="New BusinessRuleException(&quot;SL-03&quot;)" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="parametros_exist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="664,145" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue" />
-    <ui:BuildDataTable DataTable="[DataQueue]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="664,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;URL_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Precio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Metros_x0020_Cuadrados&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;URL_x0020_Vivienda&gt;text&lt;/URL_x0020_Vivienda&gt;&#xA;    &lt;Precio&gt;1&lt;/Precio&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="664,1688" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="742,145" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="742,3523" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="626,1437" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
-          <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="snm:MailMessage">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="MailActual" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1273" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:UiElementExists DisplayName="Element Exists 'grouping'" Exists="[exists]" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                  <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c81a015d-88d4-4811-b551-2178c9be0379" InformativeScreenshot="7cf288b36670b13fdf9e5c5c0b43a04c" Selector="&lt;wnd app='opera.exe' cls='Chrome_WidgetWin_1' title='ChatGPT - Opera' /&gt;&lt;ctrl name='ChatGPT' role='document' /&gt;&lt;ctrl idx='124' role='grouping' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:UiElementExists.Target>
-                </ui:UiElementExists>
-                <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="530,894" sap2010:WorkflowViewState.IdRef="If_1">
-                  <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,475" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" Messages="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="ProyectoRPALSRY@outlook.es" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="12345678RPA" Port="993" SecureConnection="Auto" Server="http://outlook.office365.com" Top="30" />
-                      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[str_bodyMail]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[MailActual.Body]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[str_Prompt]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[in_config("Ruta_Prompt").ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[str_PromptMail]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[in_config("Ruta_Prompt").ToString and str_bodyMail.ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,249" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;No se pudo acceder a ChatGPT&quot;]" />
-                    </Sequence>
-                  </If.Else>
-                </If>
-                <ui:Comment sap:VirtualizedContainerService.HintSize="530,155" sap2010:WorkflowViewState.IdRef="Comment_2" Text="//1 Verificar que chatGPT está abierto, si no, salida funcional&#xA;// 2 obtener body de mail. MailActual.Body&#xA;// 3 Añadir mail a plantilla prompt&#xA;// 4 introducir prompt y tomamos respuesta&#xA;// 5Completamos fila de tabla" />
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEach.Body>
-        </ui:ForEach>
+        <Sequence sap:VirtualizedContainerService.HintSize="704,3272" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:BuildDataTable DataTable="[DataQueue]" DisplayName="Creamos la tabla donde recogeremos los datos recogidos " sap:VirtualizedContainerService.HintSize="642,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;URL_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Precio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;URL_x0020_Vivienda /&gt;&#xD;&#xA;    &lt;Precio&gt;1&lt;/Precio&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="642,3095" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="snm:MailMessage">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="MailActual" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="608,2908" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'grouping'" sap:VirtualizedContainerService.HintSize="546,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="66b2b010-8980-42a8-b65a-cee77a250326" InformativeScreenshot="20405e041a1a1e54cdbb875e038a988b" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl aaname='Nuevo chat' parentid='__next' tag='DIV' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:UiElementExists DisplayName="Element Exists 'grouping'" Exists="[exists]" sap:VirtualizedContainerService.HintSize="546,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c81a015d-88d4-4811-b551-2178c9be0379" InformativeScreenshot="ca702e3b4ac000ef3e82ad5a3851584d" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='__next' tag='DIV' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="546,2058" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1639" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_bodyMail]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[MailActual.Body]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_Prompt]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[in_config("Ruta_Prompt").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_PromptMail]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[in_config("Ruta_Prompt").ToString+str_bodyMail.ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'editable text'" sap:VirtualizedContainerService.HintSize="450,187" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[str_PromptMail]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ae89ec71-6fd5-4bea-b47c-677d75ec2397" InformativeScreenshot="c925c82412b7160227e564f75d94d2fe" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl id='prompt-textarea' tag='TEXTAREA' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="27c3694a-b8b2-45e9-a12f-07f7c9495acd" InformativeScreenshot="a1949b327aa5cc843f6adfb894334e1c" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg' parentid='__next' tag='svg' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:UiElementExists DisplayName="Element Exists 'UL'" Exists="[parametros_exist]" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                          <ui:UiElementExists.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f9363e5-14c7-48b1-9dc2-11950590e056" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='UL' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:UiElementExists.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:UiElementExists>
+                        <If Condition="[parametros_exist]" sap:VirtualizedContainerService.HintSize="450,617" sap2010:WorkflowViewState.IdRef="If_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,249" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Hemos podido realizar el prompt&quot;]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[business_NoRespuesta]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'UL'" sap:VirtualizedContainerService.HintSize="450,130" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b0ab81e-64d2-40bf-96fe-b8ad17f82ab9" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='UL' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:GetValue>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,249" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;No se pudo acceder a ChatGPT&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:AddDataRow ArrayRow="{x:Null}" DataRow="{x:Null}" DataTable="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="546,218" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  <Assign sap:VirtualizedContainerService.HintSize="546,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[out_elementosQueue]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable">[DataQueue]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:Comment sap:VirtualizedContainerService.HintSize="546,155" sap2010:WorkflowViewState.IdRef="Comment_2" Text="//1 Verificar que chatGPT está abierto, si no, salida funcional&#xA;// 2 obtener body de mail. MailActual.Body&#xA;// 3 Añadir mail a plantilla prompt&#xA;// 4 introducir prompt y tomamos respuesta&#xA;// 5Completamos fila de tabla" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="630,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="708,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
