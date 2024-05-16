@@ -44,11 +44,14 @@
       "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "get_url&TryCatch_1",
-        "get_precio&TryCatch_1",
-        "get_habitaciones&TryCatch_1",
-        "get_metros&TryCatch_1",
-        "numero_articulo&TryCatch_1",
+        "dt_tabladedatos&TryCatch_1",
+        "str_precio&Sequence_6",
+        "get_url&Sequence_1",
+        "get_precio&Sequence_1",
+        "get_habitaciones&Sequence_1",
+        "get_metros&Sequence_1",
+        "numero_articulo&Sequence_1",
+        "str_ciudad&Sequence_1",
         "boo_existeidealista&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -62,10 +65,10 @@
     {
       "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "numero_articulo&Sequence_2"
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue"
       ],
-      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
