@@ -12,11 +12,14 @@
       "Path": "Modulos/AccesoChatGPT/AccesoChatGPT.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Config&TryCatch_1",
         "boo_existeChatGPT&TryCatch_1",
         "scr_PasswordAccesoGPT&TryCatch_1",
         "str_usuario&TryCatch_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "In_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -48,9 +51,50 @@
       "Path": "Modulos/AccesoChatGPT/TestCaseAccesoChatGPT.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
         "scr_PasswordAccesoGPT&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoIdealista/AccesoIdealista.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
