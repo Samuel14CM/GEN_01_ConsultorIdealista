@@ -36,6 +36,12 @@
       "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_habitaciones&Sequence_1",
+        "str_precio&Sequence_1",
+        "str_metrosCuadrados&Sequence_1",
+        "str_localidades&Sequence_1",
+        "bussines_NoLocalizado&Sequence_1",
+        "str_parametrosBusqueda&Sequence_1",
         "parametros_exist&Sequence_1",
         "business_NoRespuesta&Sequence_1",
         "DataQueue&Sequence_1",
