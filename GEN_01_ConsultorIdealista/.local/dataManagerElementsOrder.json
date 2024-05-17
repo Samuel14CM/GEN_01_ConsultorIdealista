@@ -110,6 +110,7 @@
       "Path": "Modulos/Leer_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Business_Bandeja&TryCatch_1",
         "lista_mails&TryCatch_1",
         "str_TextMailActual&TryCatch_1",
         "str_user&TryCatch_1",

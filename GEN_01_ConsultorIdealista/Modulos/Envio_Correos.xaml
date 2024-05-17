@@ -124,7 +124,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Añadimos credenciales Correo&quot;]" />
-          <p:GetSecureCredential sap2010:Annotation.AnnotationText="Así nos aseguramos que estamos logados" CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="354,143" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[scr_passOutlook]" PersistanceType="Enterprise" Target="[in_Config(&quot;Credenciales_Outlook&quot;).ToString]" Username="[str_user]">
+          <p:GetSecureCredential sap2010:Annotation.AnnotationText="Así nos aseguramos que estamos logados" CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="354,143" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[scr_passOutlook]" PersistanceType="Enterprise" Target="ProyectoRPA_Outlook" Username="[str_user]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -142,9 +142,7 @@
           <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Tabla con las vvdas + vendidas" DisplayName="Send SMTP Mail Message" Email="[str_user]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="587" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="smtp-mail.outlook.com" Subject="Viviendas en venta en Idealista" To="user.gomez@outlook.com">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                <InArgument x:TypeArguments="x:String">
-                  <Literal x:TypeArguments="x:String">C:\Users\rocio\Documents\UiPath\Proyecto_Libros\Datos_Listas\Lista_Ficción.xlsx</Literal>
-                </InArgument>
+                <InArgument x:TypeArguments="x:String">C:\Users\rocio\Documents\UiPath\Proyecto_Libros\Datos_Listas\Lista_Ficción.xlsx</InArgument>
               </scg:List>
             </ui:SendMail.Files>
           </ui:SendMail>
