@@ -44,8 +44,9 @@
       "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_tabladedatos&TryCatch_1",
-        "str_precio&Sequence_6",
+        "str_habitaciones&Sequence_6",
+        "dt_tabladedatos&Sequence_1",
+        "str_precio&Sequence_1",
         "get_url&Sequence_1",
         "get_precio&Sequence_1",
         "get_habitaciones&Sequence_1",
@@ -65,8 +66,13 @@
     {
       "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "listcola&Sequence_2",
+        "datosQueue&Sequence_1",
+        "Config&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
+        "in_config",
         "in_datosQueue"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -77,6 +83,32 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/pruebas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_numHab&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
