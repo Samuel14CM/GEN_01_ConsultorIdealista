@@ -79,6 +79,33 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Subir a orquestador/Subir a Orquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_metros&TryCatch_1",
+        "str_referencia&TryCatch_1",
+        "str_habitaciones&TryCatch_1",
+        "str_precio&TryCatch_1",
+        "str_ciudad&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_config",
+        "in_datosQueue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Subir a orquestador/Testcase Subir a Orquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
