@@ -128,31 +128,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="550,1306" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="550,878" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="512,1056" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="512,628" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Paso variable a tabla" sap:VirtualizedContainerService.HintSize="450,428" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:WriteRange SheetName="{x:Null}" StartingCell="{x:Null}" WorkbookPath="{x:Null}" AddHeaders="False" DataTable="[dt_resultadosBusqueda]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Cargamos la plantilla que hemos creado para el cuerpo del correo&quot;]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
-            <ui:ReadTextFile File="{x:Null}" Content="[body_plantilla]" DisplayName="Read Text File" FileName="C:\Users\rocio\Desktop\Plantilla_Correo.txt" sap:VirtualizedContainerService.HintSize="388,103" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-          </Sequence>
           <Sequence DisplayName="Envio de correos" sap:VirtualizedContainerService.HintSize="450,543" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,7 +165,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[body_plantilla]" DisplayName="Send SMTP Mail Message- Enviamos correo/s" Email="[str_user]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="587" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="smtp-mail.outlook.com" Subject="Viviendas en venta en Idealista" To="user.gomez@outlook.com">
+            <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DisplayName="Send SMTP Mail Message- Enviamos correo/s" Email="[str_user]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="587" SecureConnection="Auto" SecurePassword="[scr_passOutlook]" Server="smtp-mail.outlook.com" Subject="Viviendas en venta en Idealista" To="user.gomez@outlook.com">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                   <InArgument x:TypeArguments="x:String">C:\Users\rocio\Documents\UiPath\Proyecto_Libros\Datos_Listas\Lista_Ficción.xlsx</InArgument>
