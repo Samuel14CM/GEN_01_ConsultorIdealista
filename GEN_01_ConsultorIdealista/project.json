@@ -93,6 +93,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Modulos\\AccesoChatGPT\\TestCaseAccesoChatGPT.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f6ddca41-261d-41a8-b485-c229ba55d808",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Modulos\\AccesoIdealista\\TestCaseAccesoIdealista.xaml"
       }
     ],
     "saveToCloud": false
