@@ -261,13 +261,6 @@
   ],
   "logs": [
     {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\samue\\Documents\\PDDIdealistaFinal\\GEN_01_ConsultorIdealista\\.local",
-      "message": "Problem reading the cache file C:\\Users\\samue\\Documents\\PDDIdealistaFinal\\GEN_01_ConsultorIdealista\\.local\\nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
-    {
       "code": "NU1100",
       "level": "Error",
       "filePath": "C:\\Users\\samue\\Documents\\PDDIdealistaFinal\\GEN_01_ConsultorIdealista\\.local",

@@ -101,9 +101,50 @@
       "Path": "Modulos/Subir a orquestador/Testcase Subir a Orquestador.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_datatable&Sequence_1",
         "config&Sequence_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "indatos_Queue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "datosQueue&Sequence_1",
+        "listcola&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boo_existeidealista&Sequence_1",
+        "str_ciudad&Sequence_1",
+        "numero_articulo&Sequence_1",
+        "get_metros&Sequence_1",
+        "get_habitaciones&Sequence_1",
+        "get_precio&Sequence_1",
+        "get_url&Sequence_1",
+        "str_precio&Sequence_1",
+        "dt_tabladedatos&Sequence_1",
+        "str_habitaciones&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_resultadoBusqueda",
+        "in_config",
+        "in_datosQueue"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

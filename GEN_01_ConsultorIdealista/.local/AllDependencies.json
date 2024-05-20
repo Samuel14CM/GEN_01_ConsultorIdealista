@@ -19698,12 +19698,6 @@
   },
   "logs": [
     {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\samue\\Documents\\PDDIdealistaFinal\\GEN_01_ConsultorIdealista\\.local\\nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
-    {
       "code": "NU1100",
       "level": "Error",
       "message": "Unable to resolve 'UiPath.IntegrationService.Activities (= 1.5.0)' for 'net8.0-windows7.0'.",
