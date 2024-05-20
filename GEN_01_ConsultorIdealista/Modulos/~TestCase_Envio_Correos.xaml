@@ -156,8 +156,6 @@
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
             <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
           </InArgument>
-          <InArgument x:TypeArguments="sc:Queue" x:Key="in_elementoCola" />
-          <InArgument x:TypeArguments="sc:Queue" x:Key="in_resultadosBusqueda" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
