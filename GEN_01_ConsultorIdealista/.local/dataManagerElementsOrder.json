@@ -95,6 +95,23 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Subir a orquestador/Subir a Orquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_ciudad&TryCatch_1",
+        "str_precio&TryCatch_1",
+        "str_habitaciones&TryCatch_1",
+        "str_referencia&TryCatch_1",
+        "str_metros&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
