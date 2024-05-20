@@ -17,7 +17,9 @@
         "scr_PasswordAccesoGPT&TryCatch_1",
         "str_usuario&TryCatch_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "In_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -59,8 +61,12 @@
     {
       "Path": "Modulos/AccesoIdealista/AccesoIdealista.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "Config&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -77,6 +83,16 @@
         "in_ConfigSheets",
         "out_Config"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoIdealista/TestCaseAccesoIdealista.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
