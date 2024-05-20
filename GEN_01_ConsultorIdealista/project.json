@@ -7,6 +7,7 @@
     "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.23.2-preview]",
     "UiPath.IntegrationService.Activities": "[1.5.0]",
+    "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[24.3.1]",
     "UiPath.Testing.Activities": "[24.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]"

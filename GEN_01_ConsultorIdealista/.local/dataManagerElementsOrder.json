@@ -112,6 +112,144 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "scr_passOutlook&Sequence_1",
+        "str_user&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_elementoCola",
+        "in_resultadosBusqueda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lista_mails&TryCatch_1",
+        "str_TextMailActual&TryCatch_1",
+        "str_user&TryCatch_1",
+        "scr_passOutlook&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_listaMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boo_existeidealista&Sequence_1",
+        "str_ciudad&Sequence_1",
+        "numero_articulo&Sequence_1",
+        "get_metros&Sequence_1",
+        "get_habitaciones&Sequence_1",
+        "get_precio&Sequence_1",
+        "get_url&Sequence_1",
+        "str_precio&Sequence_1",
+        "dt_tabladedatos&Sequence_1",
+        "str_habitaciones&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_resultadoBusqueda",
+        "in_config",
+        "in_datosQueue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DataQueue&Sequence_1",
+        "exists&Sequence_1",
+        "str_bodyMail&Sequence_1",
+        "str_PromptMail&Sequence_1",
+        "str_Prompt&Sequence_1",
+        "business_NoRespuesta&Sequence_1",
+        "parametros_exist&Sequence_1",
+        "str_parametrosBusqueda&Sequence_1",
+        "bussines_NoLocalizado&Sequence_1",
+        "str_localidades&Sequence_1",
+        "str_metrosCuadrados&Sequence_1",
+        "str_precio&Sequence_1",
+        "str_habitaciones&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_listMails",
+        "in_config",
+        "out_elementosQueue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio correos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "scr_passOutlook&Sequence_1",
+        "str_user&Sequence_1",
+        "dt_resultadosBusqueda&Sequence_1",
+        "body_plantilla&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer Correos/Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lista_mails&TryCatch_1",
+        "str_TextMailActual&TryCatch_1",
+        "str_user&TryCatch_1",
+        "scr_passOutlook&TryCatch_1",
+        "Business_Bandeja&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_listaMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer Correos/TestCase_Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "lista_mails&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/TestCase_Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "list_Mail&Sequence_1",
+        "DataQueue&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_listMails",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
