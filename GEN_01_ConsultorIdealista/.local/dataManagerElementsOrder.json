@@ -139,6 +139,21 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio correos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "scr_passOutlook&Sequence_1",
+        "str_user&Sequence_1",
+        "dt_resultadosBusqueda&Sequence_1",
+        "body_plantilla&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
