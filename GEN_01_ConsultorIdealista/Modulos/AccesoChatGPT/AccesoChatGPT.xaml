@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>698,3048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1222,3048</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AccesoChatGPT_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -186,13 +186,10 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34c8a100-fa5f-4541-be9d-ae144cb3e34c" InformativeScreenshot="c2eb65ea9ddbe3b8f96425d353f55134" Selector="&lt;webctrl tag='BUTTON' idx='1' /&gt;&lt;webctrl /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34c8a100-fa5f-4541-be9d-ae144cb3e34c" InformativeScreenshot="c2eb65ea9ddbe3b8f96425d353f55134" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl aaname='Iniciar sesión' parentid='__next' tag='BUTTON' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
                             </ui:Target>
                           </ui:Click.Target>
                           <sap:WorkflowViewStateService.ViewState>
