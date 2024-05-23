@@ -150,6 +150,7 @@
       "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_metroscuadrados&Sequence_6",
         "boo_existeidealista&Sequence_1",
         "str_ciudad&Sequence_1",
         "numero_articulo&Sequence_1",
@@ -201,12 +202,16 @@
       "Path": "Modulos/Envio correos/Envio_Correos.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "scr_passOutlook&Sequence_1",
-        "str_user&Sequence_1",
-        "dt_resultadosBusqueda&Sequence_1",
-        "body_plantilla&Sequence_1"
+        "dt_resultadoBusqueda&TryCatch_1",
+        "scr_passOutlook&TryCatch_1",
+        "str_user&TryCatch_1",
+        "str_metros&TryCatch_1",
+        "str_precio&TryCatch_1",
+        "str_tablaBody&TryCatch_1",
+        "str_body&TryCatch_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_resultadoBusqueda",
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -293,6 +298,34 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/BodyHTML/ConvertirTablaHTML.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_htmlRow&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dt_viviendas",
+        "out_str_htmlTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_resultadoBusqueda&Sequence_1",
+        "datos_Queue&Sequence_1",
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1222,3238</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>997,5890</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Obtener_Datos_Correos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,7 +122,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="708,3173" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="886,5825" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DataQueue" />
       <Variable x:TypeArguments="x:Boolean" Name="exists">
@@ -151,29 +151,29 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="646,145" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue." />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="646,2940" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="824,147" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue." />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="824,5590" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="608,2689" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="786,5339" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable DataTable="[DataQueue]" DisplayName="Creamos la tabla donde recogeremos los datos recogidos " sap:VirtualizedContainerService.HintSize="546,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Ciudad&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Precio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Metros_x0020_Cuadrados&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="Recorrer lista de mails para pasarselo a ChatGPT" sap:VirtualizedContainerService.HintSize="546,2407" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
+          <ui:BuildDataTable DataTable="[DataQueue]" DisplayName="Creamos la tabla donde recogeremos los datos recogidos " sap:VirtualizedContainerService.HintSize="724,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Ciudad&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Precio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Metros_x0020_Cuadrados&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="Recorrer lista de mails para pasarselo a ChatGPT" sap:VirtualizedContainerService.HintSize="724,5057" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="snm:MailMessage">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="MailActual" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,2211" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="690,4861" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Hacemos un click en nuevo chat para que siempre empiece de nuevo por cada mail" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Hacemos un click en nuevo chat para que siempre empiece de nuevo por cada mail" sap:VirtualizedContainerService.HintSize="628,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -185,7 +185,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="66b2b010-8980-42a8-b65a-cee77a250326" InformativeScreenshot="20405e041a1a1e54cdbb875e038a988b" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl aaname='Nuevo chat' parentid='__next' tag='DIV' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="66b2b010-8980-42a8-b65a-cee77a250326" InformativeScreenshot="20405e041a1a1e54cdbb875e038a988b" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl parentid='__next' tag='BUTTON' idx='2' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -195,7 +195,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:UiElementExists DisplayName="Esta actividad junto al IF sirve para verificar que estamos en ChatGPT" Exists="[exists]" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="Esta actividad junto al IF sirve para verificar que estamos en ChatGPT" Exists="[exists]" sap:VirtualizedContainerService.HintSize="628,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c81a015d-88d4-4811-b551-2178c9be0379" InformativeScreenshot="ca702e3b4ac000ef3e82ad5a3851584d" Selector="&lt;html app='chrome.exe' title='ChatGPT*' /&gt;&lt;webctrl parentid='__next' tag='MAIN' /&gt;&lt;webctrl aria-role='img' tag='svg' innertext='ChatGPT' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -207,10 +207,10 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="628,2707" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -359,7 +359,7 @@
                         </If>
                         <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Copiamos la respuesta de Chat GPT" sap:VirtualizedContainerService.HintSize="532,130" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b0ab81e-64d2-40bf-96fe-b8ad17f82ab9" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='P' visibleinnertext='Localidad:*Metros mínimos:*Precio:*Número de habitaciones*' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b0ab81e-64d2-40bf-96fe-b8ad17f82ab9" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='P' visibleinnertext='Localidad:*Metros mínimos:*Precio:*Número de habitaciones:*' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -392,8 +392,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:Matches BuilderPattern="(?&lt;=Localidad: )[\s\S]*?(\r)*(\n)*(?=Metros)" DisplayName="Aislamos la respuesta de ChatGPT en parámetros, en este caso es la CIudad o Localidad" FirstMatch="[str_ciudad]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Localidad: )[\\s\\S]*?(\\r)*(\\n)*(?=Metros)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Localidad: )[\s\S]*?(\r)*(\n)*(?=Metros)" RegexOption="IgnoreCase, Compiled" />
-                  <If Condition="[str_ciudad.Contains(&quot;No localizado&quot;)]" DisplayName="Condición que creamos por si uno de los parámetros no estuviera localizado en la respuesta" sap:VirtualizedContainerService.HintSize="450,468" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:Matches BuilderPattern="(?&lt;=Localidad: )[\s\S]*?(\r)*(\n)*(?=Metros)" DisplayName="Aislamos la respuesta de ChatGPT en parámetros, en este caso es la CIudad o Localidad" FirstMatch="[str_ciudad]" sap:VirtualizedContainerService.HintSize="628,92" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Localidad: )[\\s\\S]*?(\\r)*(\\n)*(?=Metros)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Localidad: )[\s\S]*?(\r)*(\n)*(?=Metros)" RegexOption="IgnoreCase, Compiled" />
+                  <If Condition="[str_ciudad.Contains(&quot;No localizado&quot;)]" DisplayName="Condición que creamos por si uno de los parámetros no estuviera localizado en la respuesta" sap:VirtualizedContainerService.HintSize="628,468" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
@@ -414,8 +414,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:Matches BuilderPattern="(?&lt;=mínimos: )[\s\S]*?(\r)*(\n)*(?=Precio)" DisplayName="Find Matching Patterns" FirstMatch="[str_metrosCuadrados]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=mínimos: )[\\s\\S]*?(\\r)*(\\n)*(?=Precio)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=mínimos: )[\s\S]*?(\r)*(\n)*(?=Precio)" RegexOption="IgnoreCase, Compiled" />
-                  <If Condition="[str_metrosCuadrados.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_4">
+                  <ui:Matches BuilderPattern="(?&lt;=mínimos: )[\s\S]*?(\r)*(\n)*(?=Precio)" DisplayName="Find Matching Patterns" FirstMatch="[str_metrosCuadrados]" sap:VirtualizedContainerService.HintSize="628,92" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=mínimos: )[\\s\\S]*?(\\r)*(\\n)*(?=Precio)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=mínimos: )[\s\S]*?(\r)*(\n)*(?=Precio)" RegexOption="IgnoreCase, Compiled" />
+                  <If Condition="[str_metrosCuadrados.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="628,57" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -442,8 +442,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:Matches BuilderPattern="(?&lt;=Precio: )[\s\S]*?(\r)*(\n)*(?=Número)" DisplayName="Find Matching Patterns" FirstMatch="[str_precio]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Precio: )[\\s\\S]*?(\\r)*(\\n)*(?=Número)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Precio: )[\s\S]*?(\r)*(\n)*(?=Número)" RegexOption="IgnoreCase, Compiled" />
-                  <If Condition="[str_precio.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_5">
+                  <ui:Matches BuilderPattern="(?&lt;=Precio: )[\s\S]*?(\r)*(\n)*(?=Número)" DisplayName="Find Matching Patterns" FirstMatch="[str_precio]" sap:VirtualizedContainerService.HintSize="628,92" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Precio: )[\\s\\S]*?(\\r)*(\\n)*(?=Número)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Precio: )[\s\S]*?(\r)*(\n)*(?=Número)" RegexOption="IgnoreCase, Compiled" />
+                  <If Condition="[str_precio.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="628,57" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -470,8 +470,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:Matches BuilderPattern="(?&lt;=habitaciones: )[\s\S]*" DisplayName="Find Matching Patterns" FirstMatch="[str_habitaciones]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=habitaciones: )[\\s\\S]*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=habitaciones: )[\s\S]*" RegexOption="IgnoreCase, Compiled" />
-                  <If Condition="[str_habitaciones.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="450,468" sap2010:WorkflowViewState.IdRef="If_6">
+                  <ui:Matches BuilderPattern="(?&lt;=habitaciones: )[\s\S]*" DisplayName="Find Matching Patterns" FirstMatch="[str_habitaciones]" sap:VirtualizedContainerService.HintSize="628,92" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[str_parametrosBusqueda]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=habitaciones: )[\\s\\S]*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=habitaciones: )[\s\S]*" RegexOption="IgnoreCase, Compiled" />
+                  <If Condition="[str_habitaciones.Contains(&quot;No localizado&quot;)]" sap:VirtualizedContainerService.HintSize="628,468" sap2010:WorkflowViewState.IdRef="If_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -498,7 +498,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{str_ciudad.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_precio.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_habitaciones.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_metrosCuadrados.Replace(&quot;,&quot;,&quot;&quot;).Trim}]" DataTable="[DataQueue]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{str_ciudad.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_precio.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_habitaciones.Replace(&quot;,&quot;,&quot;&quot;).Trim,str_metrosCuadrados.Replace(&quot;,&quot;,&quot;&quot;).Trim}]" DataTable="[DataQueue]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="628,218" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   <ui:Comment sap:VirtualizedContainerService.HintSize="450,155" sap2010:WorkflowViewState.IdRef="Comment_2" Text="//1 Verificar que chatGPT está abierto, si no, salida funcional&#xA;// 2 obtener body de mail. MailActual.Body&#xA;// 3 Añadir mail a plantilla prompt&#xA;// 4 introducir prompt y tomamos respuesta&#xA;// 5Completamos fila de tabla" />
                 </Sequence>
               </ActivityAction>

@@ -96,6 +96,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Subir_a_Orquestador" sap:VirtualizedContainerService.HintSize="630,1598" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -190,13 +191,12 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Añadimos los datos a la cola del Orchestator, para luego recoger esos datos dentro de la busqueda de resultados" DisplayName="Add Queue Item" FolderPath="ColaIdealista" sap:VirtualizedContainerService.HintSize="434,274" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="ColaIdealista1">
+                <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Añadimos los datos a la cola del Orchestator, para luego recoger esos datos dentro de la busqueda de resultados" DisplayName="Add Queue Item" FolderPath="[in_config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,274" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[str_referencia]">
                   <ui:AddQueueItem.ItemInformation>
                     <InArgument x:TypeArguments="x:String" x:Key="Ciudad">[str_ciudad]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="Precio">[str_precio]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="Habitaciones">[str_habitaciones]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="Metros">[str_metros]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Petición">[str_referencia]</InArgument>
                   </ui:AddQueueItem.ItemInformation>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
