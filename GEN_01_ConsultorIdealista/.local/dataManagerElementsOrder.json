@@ -318,9 +318,7 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_resultadoBusqueda&Sequence_1",
-        "datos_Queue&Sequence_1",
-        "Config&Sequence_1"
+        "dt_resultadoBusqueda&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_TransactionItem",
