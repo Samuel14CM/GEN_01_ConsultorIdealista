@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>997,5890</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1216,6010</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Obtener_Datos_Correos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,7 +122,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="886,5825" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Obtener_Datos_Correos" sap:VirtualizedContainerService.HintSize="886,5945" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DataQueue" />
       <Variable x:TypeArguments="x:Boolean" Name="exists">
@@ -151,23 +151,23 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="824,147" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue." />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="824,5590" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="824,145" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Crear tabla con las columnas. Una columna por propiedad que necesitamos para buscar. Esta tabla es el argumento de salida out_datosQueue." />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="824,5712" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="786,5339" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="786,5461" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:BuildDataTable DataTable="[DataQueue]" DisplayName="Creamos la tabla donde recogeremos los datos recogidos " sap:VirtualizedContainerService.HintSize="724,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Ciudad&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Precio&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Metros_x0020_Cuadrados&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="Recorrer lista de mails para pasarselo a ChatGPT" sap:VirtualizedContainerService.HintSize="724,5057" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="Recorrer lista de mails para pasarselo a ChatGPT" sap:VirtualizedContainerService.HintSize="724,5179" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[In_listMails]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="snm:MailMessage">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="MailActual" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="690,4861" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="690,4983" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,7 +207,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="628,2707" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[exists]" sap:VirtualizedContainerService.HintSize="628,2829" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -215,7 +215,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="594,2166" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="594,2288" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="str_plantillaPrompt" />
                         </Sequence.Variables>
@@ -289,7 +289,7 @@
                             </ui:Target>
                           </ui:TypeInto.Target>
                         </ui:TypeInto>
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="532,139" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="532,139" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -357,15 +357,13 @@
                             </Sequence>
                           </If.Else>
                         </If>
+                        <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="532,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
                         <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Copiamos la respuesta de Chat GPT" sap:VirtualizedContainerService.HintSize="532,130" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b0ab81e-64d2-40bf-96fe-b8ad17f82ab9" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='P' visibleinnertext='Localidad:*Metros mínimos:*Precio:*Número de habitaciones:*' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b0ab81e-64d2-40bf-96fe-b8ad17f82ab9" InformativeScreenshot="8e61517521a1ce018b66ced9b83dbef5" Selector="&lt;html app='chrome.exe' title='ChatGPT' /&gt;&lt;webctrl tag='P' visibleinnertext='Localidad:*Metros mínimos:*Precio:*Número de habitaciones:*' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
                             </ui:Target>
                           </ui:GetValue.Target>
                           <ui:GetValue.Value>

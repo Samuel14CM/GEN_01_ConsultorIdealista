@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1222,7241</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1216,5926</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Busqueda_de_resultados_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Busqueda_de_resultados" sap:VirtualizedContainerService.HintSize="850,7176" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Busqueda_de_resultados" sap:VirtualizedContainerService.HintSize="850,5861" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boo_existeidealista" />
       <Variable x:TypeArguments="x:String" Name="str_ciudad" />
@@ -132,9 +132,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="788,7088" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="788,5773" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="750,6837" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence sap:VirtualizedContainerService.HintSize="750,5522" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_habitaciones" />
             <Variable x:TypeArguments="x:String" Name="str_metroscuadrados" />
@@ -176,7 +176,7 @@
               <InArgument x:TypeArguments="x:String">[in_datosQueue.SpecificContent("Metros").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:UiElementExists DisplayName="¿Existe idealista?" Exists="[boo_existeidealista]" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists DisplayName="¿Existe idealista?" Exists="[boo_existeidealista]" sap:VirtualizedContainerService.HintSize="688,57" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6e91402b-3ba6-46ab-aafa-655fbd8eff70" InformativeScreenshot="effd46236f2f807f9aa69f568695a31a" Selector="&lt;html app='chrome.exe' title='idealista — Casas y pisos, alquiler y venta. Anuncios gratis' /&gt;&lt;webctrl tag='IMG' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -187,11 +187,17 @@
                 </ui:Target.WaitForReady>
               </ui:Target>
             </ui:UiElementExists.Target>
-          </ui:UiElementExists>
-          <If Condition="[boo_existeidealista]" DisplayName="Si boo_existeidealista entonces..." sap:VirtualizedContainerService.HintSize="688,1142" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:UiElementExists>
+          <If Condition="[boo_existeidealista]" DisplayName="Si boo_existeidealista entonces..." sap:VirtualizedContainerService.HintSize="688,57" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -263,6 +269,28 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click en baratos para ordenar del mas barato al mas caro" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec0e966c-72b1-4ce3-a2dc-0b7585d8e106" InformativeScreenshot="e129f6a0387039ce11ccfa17d874e0cb" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl parentid='view-type-toolbar-buttons' tag='A' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
           <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="688,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
           <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="688,165" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="pgdn" KeyModifiers="None" SpecialKey="True">
             <ui:SendHotkey.Target>
@@ -276,7 +304,7 @@
               </ui:Target>
             </ui:SendHotkey.Target>
           </ui:SendHotkey>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -288,7 +316,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a8e98f9c-df49-44f6-b2ce-25da6f01024a" InformativeScreenshot="68b1ed655fadc8082963f5bdd7da591e" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl id='qa_adfilter_price' tag='BUTTON' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a6c49bb-5ba6-4710-a10c-047a90bd20e2" InformativeScreenshot="27234f7afec10f10a68be7da6f37a05c" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl parentid='qa_adfilter_price' tag='SPAN' aaname='Máx' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -298,18 +326,28 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBefore="1000" DisplayName="Escribimos precio máximo" sap:VirtualizedContainerService.HintSize="688,187" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[str_precio]">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="1000" DisplayName="Type Into 'editable text  Otro'" sap:VirtualizedContainerService.HintSize="688,187" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[str_precio.Replace(&quot;.&quot;,&quot;&quot;)]">
             <ui:TypeInto.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="855f318a-ba85-46fb-bcc1-c25abba3b8ef" InformativeScreenshot="8d40a77879f404af6b677b11d328c5b4" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl name='*' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a77521a-b603-4213-bde0-f6cfd54e197d" InformativeScreenshot="d1ded96acc6dfb00f5741cf655f9c8e6" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Casas y pisos baratos*Google Chrome' /&gt;&lt;ctrl name='Casas y pisos * — idealista' role='document' /&gt;&lt;ctrl name='Otro' role='editable text' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="688,165" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
-            <ui:SendHotkey.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f654965-037d-4600-8190-d1cc389fdc21">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a6c49bb-5ba6-4710-a10c-047a90bd20e2" InformativeScreenshot="27234f7afec10f10a68be7da6f37a05c" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Casas y pisos baratos en*Google Chrome' /&gt;&lt;ctrl name='Casas y pisos * — idealista' role='document' /&gt;&lt;ctrl name='Ok' role='push button' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -317,8 +355,8 @@
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
               </ui:Target>
-            </ui:SendHotkey.Target>
-          </ui:SendHotkey>
+            </ui:Click.Target>
+          </ui:Click>
           <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="688,122" sap2010:WorkflowViewState.IdRef="Delay_5" />
           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  qa_adfilter_area'" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
@@ -342,21 +380,18 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  insertionDropdow...'" sap:VirtualizedContainerService.HintSize="688,187" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[str_metroscuadrados]">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Metros Máximos" sap:VirtualizedContainerService.HintSize="688,187" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[str_metroscuadrados.Replace(&quot;.&quot;,&quot;&quot;).Replace(&quot;Metros cuadrados&quot;,&quot;&quot;)]">
             <ui:TypeInto.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec86766f-0f94-4019-8d6c-6abb45627f6f" InformativeScreenshot="7e3a73a08f7b3b95de2cdde438894065" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl name='*' tag='INPUT' type='text' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec86766f-0f94-4019-8d6c-6abb45627f6f" InformativeScreenshot="05b43049a95f321c4b9dcb80a899d652" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Casas y pisos baratos*Google Chrome' /&gt;&lt;ctrl name='Casas y pisos * — idealista' role='document' /&gt;&lt;ctrl name='Otro' role='editable text' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="688,165" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
+          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="688,165" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="enter" KeyModifiers="None" SpecialKey="True">
             <ui:SendHotkey.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="cb0422a4-30ee-4a10-989a-0f3be0ecfa6b">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d049c5bc-dd92-41d3-b76f-c0c814a6b1f7">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -393,29 +428,13 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:Check>
           <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="688,122" sap2010:WorkflowViewState.IdRef="Delay_3" />
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click en baratos para ordenar del mas barato al mas caro" sap:VirtualizedContainerService.HintSize="688,139" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-            <ui:Click.CursorPosition>
-              <ui:CursorPosition Position="Center">
-                <ui:CursorPosition.OffsetX>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetX>
-                <ui:CursorPosition.OffsetY>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetY>
-              </ui:CursorPosition>
-            </ui:Click.CursorPosition>
-            <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec0e966c-72b1-4ce3-a2dc-0b7585d8e106" InformativeScreenshot="e129f6a0387039ce11ccfa17d874e0cb" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl parentid='view-type-toolbar-buttons' tag='A' /&gt;">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
-              </ui:Target>
-            </ui:Click.Target>
-          </ui:Click>
-          <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="688,122" sap2010:WorkflowViewState.IdRef="Delay_6" />
+          <ui:BuildDataTable sap2010:Annotation.AnnotationText="Creamos una datatable, para ingresar los datos, con su output a dt_tabladedatos" DataTable="[dt_tabladedatos]" DisplayName="Se crea tabla, para recoger datos" sap:VirtualizedContainerService.HintSize="688,134" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;URL_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Precio_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;N_x00BA__x0020_de_x0020_Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Metros_x0020_de_x0020_la_x0020_vivienda&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;URL_x0020_Vivienda /&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:BuildDataTable>
           <Assign sap2010:Annotation.AnnotationText="Asignamos un valor a numero articulo a 1, esto es la variable que cambiara de vivienda en vivienda, para realizar la copia de datos." sap:VirtualizedContainerService.HintSize="688,156" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[numero_articulo]</OutArgument>
@@ -429,21 +448,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <Sequence DisplayName="Recogemos Datos" sap:VirtualizedContainerService.HintSize="688,2529" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Recogemos Datos" sap:VirtualizedContainerService.HintSize="688,2395" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Se empieza a recoger los datos&quot;]" />
-            <ui:BuildDataTable sap2010:Annotation.AnnotationText="Creamos una datatable, para ingresar los datos, con su output a dt_tabladedatos" DataTable="[dt_tabladedatos]" DisplayName="Se crea tabla, para recoger datos" sap:VirtualizedContainerService.HintSize="626,134" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;URL_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Precio_x0020_Vivienda&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N_x00BA__x0020_de_x0020_Habitaciones&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Metros_x0020_de_x0020_la_x0020_vivienda&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;URL_x0020_Vivienda&gt;text&lt;/URL_x0020_Vivienda&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:BuildDataTable>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="En este while, ponemos que el numero_articulo sea &gt; 12, 12 es debido ya que el articulo 4, se considera publicidad y tenemos que saltarlo, tambien ocurre con 20, pero al ser unas 10 viviendas dejamos que si el numero de articulo sea mayor que 12 saltamos." Condition="[numero_articulo&gt;12]" DisplayName="While" sap:VirtualizedContainerService.HintSize="626,1964" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="En este while, ponemos que el numero_articulo sea &lt; 12, 12 es debido ya que el articulo 4, se considera publicidad y tenemos que saltarlo, tambien ocurre con 20, pero al ser unas 10 viviendas dejamos que si el numero de articulo sea mayor que 12 saltamos." DisplayName="While" sap:VirtualizedContainerService.HintSize="626,1964" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1761" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -498,7 +510,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52184f07-8b92-4826-93e1-a30d0801ed43" InformativeScreenshot="8e0cf02c4ab1b881154a163fb699af48" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl aria-role='heading' tag='A' /&gt;&quot;, numero_articulo)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52184f07-8b92-4826-93e1-a30d0801ed43" InformativeScreenshot="c62b3f6df29f0bb1ed076ed848ed76b2" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl aria-role='heading' tag='A' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -520,7 +532,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db96bb3b-d27c-406a-99e7-30a5178d79fb" InformativeScreenshot="f337e3474afc8d7962c31048ab17bcf7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;&lt;ctrl name='Copiar dirección de enlace' role='menu item' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db96bb3b-d27c-406a-99e7-30a5178d79fb" InformativeScreenshot="2a65605810ced2cb6a7e4da277f9a788" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;&lt;ctrl name='Copiar dirección de enlace' role='menu item' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -601,6 +613,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="numero_articulo&lt;12" />
+              </ui:InterruptibleWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

@@ -326,6 +326,16 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/pruebas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_precio&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
