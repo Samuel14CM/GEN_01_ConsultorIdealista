@@ -557,9 +557,9 @@
                       <OutArgument x:TypeArguments="x:String">[get_precio]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text NºHabitaciones" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                  <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get text habitaciones" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="GetValue_6">
                     <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13e6769f-d15a-47dd-a725-e28aace55e52" InformativeScreenshot="cc6a587d0bc6d531e25558310d839f60" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' visibleinnertext='*' idx='{0}' /&gt;&quot;, numero_articulo)]">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18c9b09d-de2d-4d5a-8caf-69feb1a9795c" InformativeScreenshot="630fe49ba4ac2c9bff33bd9ce8a185d3" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' aaname='*hab.' /&gt;&quot;, numero_articulo)]">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -568,9 +568,6 @@
                         </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:GetValue.Target>
-                    <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[get_habitaciones]</OutArgument>
-                    </ui:GetValue.Value>
                   </ui:GetValue>
                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Metros Cuadrados" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="GetValue_5">
                     <ui:GetValue.Target>

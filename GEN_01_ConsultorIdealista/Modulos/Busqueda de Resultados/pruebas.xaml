@@ -164,7 +164,7 @@
     </ui:Click>
     <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="434,130" sap2010:WorkflowViewState.IdRef="GetValue_2">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18c9b09d-de2d-4d5a-8caf-69feb1a9795c" InformativeScreenshot="0d39ef89eda0d7de4e90e1e7aa64693a" Selector="[string.Format(&quot;&lt;html app='chrome.exe' title='Casas y pisos baratos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='{0}' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' visibleinnertext='* hab*' /&gt;&quot;, numero_articulo)]">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18c9b09d-de2d-4d5a-8caf-69feb1a9795c" InformativeScreenshot="630fe49ba4ac2c9bff33bd9ce8a185d3" Selector="&lt;html app='chrome.exe' title='Casas y pisos * — idealista' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;article' parentid='main-content' tag='ARTICLE' idx='1' /&gt;&lt;webctrl class='item-detail' parentid='main-content' tag='SPAN' visibleinnertext='* hab.' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
