@@ -336,6 +336,33 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "datosQueue&Sequence_1",
+        "listcola&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/BodyHTML/SimulacionMain.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_libros&Sequence_1",
+        "str_body&Sequence_1",
+        "str_tablaBody&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
