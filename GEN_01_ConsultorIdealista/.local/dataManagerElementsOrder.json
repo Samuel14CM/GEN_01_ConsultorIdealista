@@ -1,0 +1,368 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoChatGPT/AccesoChatGPT.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&TryCatch_1",
+        "boo_existeChatGPT&TryCatch_1",
+        "scr_PasswordAccesoGPT&TryCatch_1",
+        "str_usuario&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "datosQueue&Sequence_34",
+        "list_mails&Sequence_34",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoChatGPT/TestCaseAccesoChatGPT.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "scr_PasswordAccesoGPT&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoIdealista/AccesoIdealista.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/AccesoIdealista/TestCaseAccesoIdealista.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Subir a orquestador/Subir a Orquestador.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_ciudad&TryCatch_1",
+        "str_precio&TryCatch_1",
+        "str_habitaciones&TryCatch_1",
+        "str_referencia&TryCatch_1",
+        "str_metros&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "scr_passOutlook&Sequence_1",
+        "str_user&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_elementoCola",
+        "in_resultadosBusqueda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lista_mails&TryCatch_1",
+        "str_TextMailActual&TryCatch_1",
+        "str_user&TryCatch_1",
+        "scr_passOutlook&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_listaMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_metroscuadrados&Sequence_6",
+        "boo_existeidealista&Sequence_1",
+        "str_ciudad&Sequence_1",
+        "numero_articulo&Sequence_1",
+        "get_metros&Sequence_1",
+        "get_habitaciones&Sequence_1",
+        "get_precio&Sequence_1",
+        "get_url&Sequence_1",
+        "str_precio&Sequence_1",
+        "dt_tabladedatos&Sequence_1",
+        "str_habitaciones&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_resultadoBusqueda",
+        "in_config",
+        "in_datosQueue"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_plantillaPrompt&Sequence_4",
+        "str_rutaPlantillaPrompt&Sequence_1",
+        "business_NoAcceso&Sequence_1",
+        "str_ciudad&Sequence_1",
+        "DataQueue&Sequence_1",
+        "exists&Sequence_1",
+        "str_bodyMail&Sequence_1",
+        "str_PromptMail&Sequence_1",
+        "business_NoRespuesta&Sequence_1",
+        "parametros_exist&Sequence_1",
+        "str_parametrosBusqueda&Sequence_1",
+        "bussines_NoLocalizado&Sequence_1",
+        "str_metrosCuadrados&Sequence_1",
+        "str_precio&Sequence_1",
+        "str_habitaciones&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_datosQueue",
+        "In_listMails",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio correos/Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_resultadoBusqueda&TryCatch_1",
+        "scr_passOutlook&TryCatch_1",
+        "str_user&TryCatch_1",
+        "str_metros&TryCatch_1",
+        "str_precio&TryCatch_1",
+        "str_tablaBody&TryCatch_1",
+        "str_body&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_resultadoBusqueda",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer Correos/Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "lista_mails&TryCatch_1",
+        "str_TextMailActual&TryCatch_1",
+        "str_user&TryCatch_1",
+        "scr_passOutlook&TryCatch_1",
+        "Business_Bandeja&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_listaMails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Leer Correos/TestCase_Leer_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "lista_mails&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Obtener_Datos_Correos/TestCase_Obtener_Datos_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "list_Mail&Sequence_1",
+        "DataQueue&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_listMails",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Envio correos/TestCase_Envio_Correos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "Elemento_Cola&Sequence_1",
+        "R_Busqueda&Sequence_1",
+        "dt_resultadosBusqueda&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_elementoCola",
+        "in_Config",
+        "in_resultadoBusqueda"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/BodyHTML/ConvertirTablaHTML.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_htmlRow&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dt_viviendas",
+        "out_str_htmlTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_resultadoBusqueda&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/pruebas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_precio&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modulos/Busqueda de Resultados/TestCase Busqueda de resultados.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "datosQueue&Sequence_1",
+        "listcola&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_datosQueue",
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/BodyHTML/SimulacionMain.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_libros&Sequence_1",
+        "str_body&Sequence_1",
+        "str_tablaBody&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿Te añado un texto con datos para buscar una casa. Necesito que localices en él si es posible la localidad, metros minimos, precio y num habitaciones.
+Cada dato, damelo en el formato, precio: XXX€
+SI algun dato no lo localizas, dime, Precio: No localizado
+Siempre debes darme los datos, tanto si existen como si no, en orden, Localidad:,Metros mínimos:,Precio:,Número de habitaciones:,
+para que sea más visual para tí lo quiero tal cual así, quiero que me lo proyectes en formato lista
+
+Localidad: xxxxx.
+Metros mínimos: xxxxxx.
+Precio: xxxxxx.
+Número de habitaciones: xxxx.
+
+En número de habitaciones quiero que sólo salga la cantidad
+Este es el texto:
+"@mail@"
+
+
