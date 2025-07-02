@@ -18,9 +18,8 @@ El proyecto consiste en varias funciones que son:
  5. Recibir esos datos (Items) del orchestator, y realizar las busquedas de las viviendas dentro de [Idealista](https://www.idealista.com)
  6. Y escribir un mensaje con los datos recogidos, con una tabla en HTML al cliente.
 
-![Resultado del correo](https://imgur.com/a/izlcs2T)
+![Resultado del Correo](https://imgur.com/7omUI62)
 
 
 # Video
 [Video demostracion](https://youtu.be/ZHp1q98Hp9Y)
-
